@@ -435,7 +435,7 @@ def create_matching():
 
     tile_state = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]#reset state of tiles
     random.shuffle(tiles)#randomize tile positons
-    root = Canvas(gui, bg="white", height = 600, width = 1024)
+    root = Canvas(gui, bg="white", height = 1920, width = 1080)
     #4x4 grid, button 0 is top left, going right and down increases index ex) top right is 3, bottom left is 12, bottom right is 15
     b0 = tile(root, 'tile.png', image_set(tiles[0]), 0)
     b1 = tile(root, 'tile.png', image_set(tiles[1]), 1)
@@ -454,7 +454,7 @@ def create_matching():
     b14 = tile(root, 'tile.png', image_set(tiles[14]), 14)
     b15 = tile(root, 'tile.png', image_set(tiles[15]), 15)
     #game finished screen
-    game_win_b = tkinter.Button(text="You Win!", fg = "white", bg = "#500000", width = 88, height = 26, font = ('Playtime', 15), command = game_over_button)
+    game_win_b = tkinter.Button(text="You Win!", fg = "white", bg = "#500000", width = 88, height = 26, font = ('Playtime', 60), command = game_over_button)
     #place buttons
     b0.grid(row = 0, column = 0)
     b1.grid(row = 0, column = 1)
@@ -493,7 +493,7 @@ def create_tic():
     
     board_status = [0,0,0,0,0,0,0,0,0]#reset board status
     player_turn = 0 #reset player turn
-    window = Canvas(gui, bg="white", height = 600, width = 1024)
+    window = Canvas(gui, bg="white", height = 1920, width = 1080)
     #create buttons
     #top left button
     tl = board(window, 0)
@@ -514,9 +514,9 @@ def create_tic():
     #bottom right button
     br = board(window, 8)
     #game over messages
-    p1_win = tkinter.Button(text="You Won!", fg = "white", bg = "#500000", width = 88, height = 26, font = ('Playtime', 15), command=game_over)
-    p2_win = tkinter.Button(text="EB Won!", fg = "white", bg = "#500000", width = 88, height = 26, font = ('Playtime', 15), command=game_over)
-    draw = tkinter.Button(text="Draw!", fg = "white", bg = "#500000", width = 88, height = 26, font = ('Playtime', 15), command=game_over)
+    p1_win = tkinter.Button(text="You Won!", fg = "white", bg = "#500000", width = 88, height = 26, font = ('Playtime', 60), command=game_over)
+    p2_win = tkinter.Button(text="EB Won!", fg = "white", bg = "#500000", width = 88, height = 26, font = ('Playtime', 60), command=game_over)
+    draw = tkinter.Button(text="Draw!", fg = "white", bg = "#500000", width = 88, height = 26, font = ('Playtime', 60), command=game_over)
     tl.grid(row = 1, column = 0)
     tm.grid(row = 1, column = 1)
     tr.grid(row = 1, column = 2)
@@ -542,17 +542,17 @@ def create_simon():
     score = 0
     round_num = 0
     #canvas
-    simon_canvas = Canvas(gui, bg="white", height = 600, width = 1024)
+    simon_canvas = Canvas(gui, bg="white", height = 1920, width = 1080)
     #messages
-    Simon_red = tkinter.Label(simon_canvas, text = "Simon says press the red button", font = ('Playtime', 15))
-    Simon_green = tkinter.Label(simon_canvas, text = "Simon says press the green button", font = ('Playtime', 15))
-    Simon_blue = tkinter.Label(simon_canvas, text = "Simon says press the blue button", font = ('Playtime', 15))
-    score_display = tkinter.Label(simon_canvas, text = "Score: 0", font = ('Playtime', 15))
+    Simon_red = tkinter.Label(simon_canvas, text = "Simon says press the red button", font = ('Playtime', 60))
+    Simon_green = tkinter.Label(simon_canvas, text = "Simon says press the green button", font = ('Playtime', 60))
+    Simon_blue = tkinter.Label(simon_canvas, text = "Simon says press the blue button", font = ('Playtime', 60))
+    score_display = tkinter.Label(simon_canvas, text = "Score: 0", font = ('Playtime', 60))
     #buttons
     button_red = tkinter.Button(simon_canvas, bg = "red", width = 49, height = 33, command = red_pressed)
     button_green = tkinter.Button(simon_canvas,bg = "green", width = 49, height = 33,command = green_pressed)
     button_blue = tkinter.Button(simon_canvas,bg = "blue", width = 49, height = 33,command = blue_pressed)
-    game_over = tkinter.Button(simon_canvas,text="You Win! Final score: " + str(score) + " out of " + str(round_num), fg = "white", bg = "#500000", width = 88, height = 26, font = ('Playtime', 15), command = game_end)
+    game_over = tkinter.Button(simon_canvas,text="You Win! Final score: " + str(score) + " out of " + str(round_num), fg = "white", bg = "#500000", width = 88, height = 26, font = ('Playtime', 60), command = game_end)
     #place objects
     button_red.grid(row = 2, column = 0)
     button_green.grid(row = 2, column = 1)
